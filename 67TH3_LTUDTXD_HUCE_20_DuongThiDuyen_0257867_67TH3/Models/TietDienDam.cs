@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace _67TH3_LTUDTXD_HUCE_20_DuongThiDuyen_0257867_67TH3.Models
 {
-    internal class TietDienDam
+    public class TietDienDam
     {
+        public double b;
+        public double h;
     }
 }
