@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>_67TH3_LTUDTXD_HUCE_20_DuongThiDuyen_0257867_67TH3</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\arrow.png" />
+    <None Remove="Resources\Images\back1.jpg" />
+    <None Remove="Resources\Images\back2.png" />
+    <None Remove="Resources\Images\banve.png" />
+    <None Remove="Resources\Images\calculate.png" />
+    <None Remove="Resources\Images\cutting.png" />
+    <None Remove="Resources\Images\export.png" />
+    <None Remove="Resources\Images\files.png" />
+    <None Remove="Resources\Images\ketqua.png" />
+    <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\printer.png" />
+    <None Remove="Resources\Images\save.png" />
+    <None Remove="Resources\Images\test.jpg" />
+    <None Remove="Resources\Images\zoom-in.png" />
+    <None Remove="Resources\Images\zoom-out.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Images\arrow1.png" />
+    <Content Include="Resources\Images\arrow.png" />
+    <Content Include="Resources\Images\back1.jpg" />
+    <Content Include="Resources\Images\back2.png" />
+    <Content Include="Resources\Images\banve.png" />
+    <Content Include="Resources\Images\calculate.png" />
+    <Content Include="Resources\Images\cutting.png" />
+    <Content Include="Resources\Images\export.png" />
+    <Content Include="Resources\Images\files.png" />
+    <Content Include="Resources\Images\ketqua.png" />
+    <Content Include="Resources\Images\logo.png" />
+    <Content Include="Resources\Images\printer.png" />
+    <Content Include="Resources\Images\save.png" />
+    <Content Include="Resources\Images\zoom-in.png" />
+    <Content Include="Resources\Images\zoom-out.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fluent.Ribbon" Version="11.0.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\test.jpg" />
+  </ItemGroup>
+
+</Project>

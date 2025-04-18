@@ -1,0 +1,175 @@
+﻿<Window x:Class="_67TH3_LTUDTXD_HUCE_20_DuongThiDuyen_0257867_67TH3.Views.TaoFileMoi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:_67TH3_LTUDTXD_HUCE_20_DuongThiDuyen_0257867_67TH3.Views" xmlns:vm="clr-namespace:_67TH3_LTUDTXD_HUCE_20_DuongThiDuyen_0257867_67TH3.ViewModels"
+        Title="Đọc file Access" Height="450" Width="550"
+             Background="#F0F2F5" 
+             FontFamily="Segoe UI"
+             WindowStyle ="None"
+             ResizeMode="NoResize"
+             WindowStartupLocation="CenterScreen"
+             AllowsTransparency="True">
+
+    <Window.DataContext>
+        <vm:DangNhap />
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="5"/>
+
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="THÊM FILE ACCESS"
+                   Foreground="Black"
+                   FontSize="10"
+                   FontFamily="Segoe UI"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Margin="10,0,0,0"/>
+
+            <Button x:Name="btnMinimize"                            
+                BorderThickness="0"
+                Content="-"
+                Foreground="White"
+                FontSize="16"
+                FontFamily="Segoe UI"
+                Cursor="Hand"
+                Grid.Column="1"
+                Click="btnMinimize_Click">
+                <Button.Style>
+                    <Style  TargetType="Button">
+                        <Setter Property="Background" Value="#105FAD"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#278BEF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="18" Height="18"
+                            CornerRadius="9"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="btnClose"                      
+                 BorderThickness="0"
+                 Content="X"
+                 Foreground="White"
+                 FontSize="12"                           
+                 FontFamily="Segoe UI"
+                 Cursor="Hand"
+                 Grid.Column="2"
+                 Click="btnClose_Click">
+
+                <Button.Style>
+                    <Style  TargetType="Button">
+                        <Setter Property="Background" Value="IndianRed"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#C62DAE"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="18" Height="18"
+                            CornerRadius="9"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <GroupBox Header="Chọn file" Width="320" Height="150" Margin="-180,30,0,0" VerticalAlignment="Top"
+                  Background="White" BorderBrush="#CCC" Padding="10">
+                <GroupBox.Style>
+                    <Style TargetType="GroupBox">
+                        <Setter Property="HeaderTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" Foreground="Black" FontWeight="Bold" FontSize="14"/>
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </GroupBox.Style>
+                <Grid>
+                    <ListBox Name="DanhSachFile" Width="280" Height="70" Margin="0,0,0,0"/>
+                    <Button Content="Chọn file ..." Width="140" Height="32" Margin="0,60,0,0"
+                        HorizontalAlignment="Left" Background="#0078D7"
+                        FontWeight="Bold" BorderThickness="0" Cursor="Hand" Click="BtnSelectFile"/>
+                </Grid>
+
+            </GroupBox>
+
+
+
+            <GroupBox x:Name="Check" Header="Chọn tổ hợp" Width="150" Height="200" Margin="340,30,10,0" VerticalAlignment="Top"
+           Padding="10" Background="White">
+                <GroupBox.Style>
+                    <Style TargetType="GroupBox">
+                        <Setter Property="HeaderTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" Foreground="Black" FontWeight="Bold" FontSize="14"/>
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </GroupBox.Style>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <CheckBox Grid.Row="0">BAO</CheckBox>
+                    <Button Grid.Row="1" Grid.Column="0" Click="BtnAll" Content="All" Width="55" Height="26" Background="DarkGray"
+BorderThickness="0" Cursor="Hand" FontSize="12" Margin="0,40,0,0"/>
+                    <Button Grid.Row="1" Grid.Column="1" Click="BtnClear" Content="Clear" Width="60" Height="26" Background="#DC3545"
+BorderThickness="0" Cursor="Hand" Margin="5,40,0,0" FontSize="12"/>
+                </Grid>
+            </GroupBox>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,300,0,0">
+                <Button Name="BtnComplete" Content="Hoàn thành" Width="130" Height="38" Background="#28A745"
+                    FontWeight="Bold" BorderThickness="0" Cursor="Hand" Margin="5"
+                    Command="{Binding ChuyenDenTrangChu}"/>
+                <Button Name="BtnCancel" Content="Hủy bỏ" Width="130" Height="38" Background="#DC3545"
+                    FontWeight="Bold" BorderThickness="0" Cursor="Hand" Margin="5"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
